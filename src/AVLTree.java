@@ -219,7 +219,7 @@ public class AVLTree {
     Node deleteNode(int data) {
         return deleteNodeHelper(this.root, data);
     }
-    
+
     public void print() {
         printHelper(this.root, "", true);
     }

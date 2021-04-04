@@ -9,7 +9,7 @@ public class Main {
         Random random = new Random();
 
         ArrayList<Long> measures = new ArrayList<>();
-        for (int i = 0; i < 1000000; i++) {
+        for (int i = 0; i < 100000; i++) {
             long current = System.nanoTime();
             tree.insert(random.nextInt(100000));
             long result = System.nanoTime() - current;
@@ -21,7 +21,7 @@ public class Main {
         System.out.println("==========");
 
         measures.clear();
-        for (int i = 0; i < 1000000; i++) {
+        for (int i = 0; i < 100000; i++) {
             long current = System.nanoTime();
             tree.searchTree(random.nextInt(100000));
             long result = System.nanoTime() - current;
@@ -33,7 +33,7 @@ public class Main {
         System.out.println("==========");
 
         measures.clear();
-        for (int i = 0; i < 1000000; i++) {
+        for (int i = 0; i < 100000; i++) {
             long current = System.nanoTime();
             tree.deleteNode(random.nextInt(100000));
             long result = System.nanoTime() - current;
@@ -50,7 +50,6 @@ public class Main {
     public static void stat(ArrayList<Long> measures) {
         long max = measures.get(0);
         long min = measures.get(0);
-        double average = 0;
         long sum = 0;
         for (long i : measures) {
             sum += i;
@@ -62,7 +61,7 @@ public class Main {
                 max = i;
             }
         }
-        average = sum / measures.size();
+        double average = sum / measures.size();
         System.out.println("Максимальний " + max);
         System.out.println("Мінімальний " + min);
         System.out.println("Середній " + average);
